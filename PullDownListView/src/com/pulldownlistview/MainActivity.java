@@ -1,6 +1,7 @@
 package com.pulldownlistview;
 
 import com.pulldownlistview.PullDownListView.OnPullHeightChangeListener;
+import com.pulldownlistview.util.JLog;
 
 import android.app.Activity;
 import android.content.Context;
@@ -23,7 +24,7 @@ public class MainActivity extends Activity {
 	final String TAG = "MainActivity";
 	static String[] adapterData = new String[] { "A", "B", "C", "D", "E", "F",
 		"G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
-		"S", "T", "U", "V", "W", "X", "Y", "Z" };
+		"S", "T", "U", "V", "W", "X", "Y", "Z"};
 	Context mContext;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onTopHeightChange(int headerHeight,
 					int pullHeight) {
-				// TODO Auto-generated method stub
+//				JLog.e("headerHeight: " + headerHeight +" pullHeight: " + pullHeight);
 				float progress = (float) pullHeight
 						/ (float) headerHeight;
 				
@@ -67,7 +68,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onBottomHeightChange(int footerHeight,
 					int pullHeight) {
-				// TODO Auto-generated method stub
+//				JLog.e("footerHeight: " + footerHeight +" pullHeight: " + pullHeight);
 				float progress = (float) pullHeight
 						/ (float) footerHeight;
 					
@@ -89,7 +90,7 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onRefreshing(final boolean isTop) {
-				// TODO Auto-generated method stub
+//				JLog.e("istop: " + isTop);
 				if (isTop) {
 					eyeView.startAnimate();
 				} else {
